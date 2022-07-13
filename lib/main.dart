@@ -40,30 +40,31 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Row(
         children: [
-          Row(
-            children: [
-              Text("Baggo Mando"),
-              Text("Janie bliegee")
-            ],
+          Expanded(child: Image.asset("assets/image1.jpg")),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.blue,
+              child: Text("Section1"),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(20),
-            color: Colors.cyan,
-            child: Text("Whats up manny"),
+
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.pink,
+              child: Text("Section1"),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(30),
-            color: Colors.blue,
-            child: Text("Billie gene"),
-          ),
-          Container(
-            padding: EdgeInsets.all(40),
-            color: Colors.pink,
-            child: Text("Geneti"),
+
+          Expanded(
+            child:   Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.amber,
+              child: Text("Section1"),
+            ),
           )
         ],
       ),
