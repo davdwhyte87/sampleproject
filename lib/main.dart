@@ -40,8 +40,23 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Container(
-        color: Colors.blue[400],
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text("Im here o"),
+          TextButton(
+              onPressed: (){},
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.amber)
+              ),
+              child: Text("Button 1")
+          ),
+          Container(
+            color: Colors.cyan,
+            child: Text("Container1"),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
