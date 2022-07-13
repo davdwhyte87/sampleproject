@@ -40,8 +40,32 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Container(
-        color: Colors.blue[400],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text("Baggo Mando"),
+              Text("Janie bliegee")
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            color: Colors.cyan,
+            child: Text("Whats up manny"),
+          ),
+          Container(
+            padding: EdgeInsets.all(30),
+            color: Colors.blue,
+            child: Text("Billie gene"),
+          ),
+          Container(
+            padding: EdgeInsets.all(40),
+            color: Colors.pink,
+            child: Text("Geneti"),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
