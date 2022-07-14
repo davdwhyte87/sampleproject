@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'quote.dart';
 void main() {
   runApp( MaterialApp(
     home: NinjaCard(),
@@ -13,6 +13,11 @@ class NinjaCard extends StatefulWidget{
 
 class _NinjaCardState extends State<NinjaCard> {
   int ninjaLevel = 8;
+  List<Quote> quotes = [
+    Quote(author: "Lonel medd", text:"Never give into the koonst"),
+    Quote(author: "Don need", text:"Live on the edge"),
+    Quote(author: "Bravoo", text:"Dump the bitch")
+  ];
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -106,6 +111,13 @@ class _NinjaCardState extends State<NinjaCard> {
                   ),
                 )
               ],
+            ),
+            Column(
+              children:
+                quotes.map((quote){
+                return Text('${quote.author} - ${quote.text}' );
+                }).toList()
+
             )
           ],
         ),
