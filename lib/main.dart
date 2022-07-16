@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 void main() {
   runApp( MaterialApp(
     home: NinjaCard(),
@@ -19,36 +20,6 @@ class _NinjaCardState extends State<NinjaCard> {
     Quote(author: "Bravoo", text:"Dump the bitch")
   ];
 
-  Widget quoteWidget(Quote quote){
-    return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Padding(
-        padding: EdgeInsets.all(10),
-
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.grey[400]
-              )
-            ),
-            SizedBox(height: 6 ,),
-            Text(
-              quote.author,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.grey[400]
-                )
-            )
-
-          ],
-        ),
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -146,7 +117,7 @@ class _NinjaCardState extends State<NinjaCard> {
             Column(
               children:
                 quotes.map((quote){
-                return quoteWidget(quote);
+                return QuoteCard(quote: quote,);
                 }).toList()
 
             )
@@ -167,6 +138,7 @@ class _NinjaCardState extends State<NinjaCard> {
     );
   }
 }
+
 
 
 
