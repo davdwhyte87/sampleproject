@@ -18,6 +18,37 @@ class _NinjaCardState extends State<NinjaCard> {
     Quote(author: "Don need", text:"Live on the edge"),
     Quote(author: "Bravoo", text:"Dump the bitch")
   ];
+
+  Widget quoteWidget(Quote quote){
+    return Card(
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey[400]
+              )
+            ),
+            SizedBox(height: 6 ,),
+            Text(
+              quote.author,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.grey[400]
+                )
+            )
+
+          ],
+        ),
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -115,7 +146,7 @@ class _NinjaCardState extends State<NinjaCard> {
             Column(
               children:
                 quotes.map((quote){
-                return Text('${quote.author} - ${quote.text}' );
+                return quoteWidget(quote);
                 }).toList()
 
             )
