@@ -72,7 +72,7 @@ class _NinjaCardState extends State<NinjaCard> {
               height: 30,
             ),
             const Text(
-              "CURRENT NINJA LEVEL",
+              "CURRENT NINJAX LEVEL",
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2,
@@ -117,7 +117,14 @@ class _NinjaCardState extends State<NinjaCard> {
             Column(
               children:
                 quotes.map((quote){
-                return QuoteCard(quote: quote,);
+                return QuoteCard(
+                  quote: quote,
+                  delete: (){
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  }
+                );
                 }).toList()
 
             )
